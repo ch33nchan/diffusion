@@ -1,0 +1,30 @@
+# Python-generated files
+__pycache__/
+*.py[oc]
+build/
+dist/
+wheels/
+*.egg-info
+
+# Virtual environments
+.venv
+
+# Pretrained weights (large files)
+ShadowDiffusion/pretrained/
+*.pth
+*.pt
+
+# Logs and results
+logs/
+results/
+tb_logger/
+checkpoint/
+
+# IDE
+.idea/
+.vscode/
+
+# OS
+.DS_Store
+pretrained.zip
+vulkan.pdf
