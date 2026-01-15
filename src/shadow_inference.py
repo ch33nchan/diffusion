@@ -93,7 +93,11 @@ class ShadowRemover:
         tensor = tensor.squeeze().cpu()
         tensor = (tensor + 1.0) / 2.0
         tensor = tensor.clamp(0, 1)
-        img_np = tensor.permute(1, 2, 0).numpy()
+        if tensor.dim() == 2:
+            img_np = tensor.numpy()
+            img_np = np.stack([img_np] * 3, axis=-1)
+        else:
+            img_np = tensor.permute(1, 2, 0).numpy()
         img_np = (img_np * 255).astype(np.uint8)
         return img_np
 
