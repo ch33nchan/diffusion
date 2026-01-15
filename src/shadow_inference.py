@@ -85,7 +85,7 @@ class ShadowRemover:
         else:
             mask_tensor = torch.ones(1, 1, self.image_size, self.image_size)
         
-        mask_tensor = mask_tensor.repeat(1, 3, 1, 1).to(self.device)
+        mask_tensor = mask_tensor.to(self.device)
         
         return img_tensor, mask_tensor
 
